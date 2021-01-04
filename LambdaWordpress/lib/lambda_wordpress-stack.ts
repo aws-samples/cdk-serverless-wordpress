@@ -161,10 +161,7 @@ export class LambdaWordpressStack extends cdk.Stack {
     const secret = cdk.SecretValue.plainText(DB_PASSWORD);
     const auroraServerlessCluster = new rds.DatabaseCluster(this, 'ServerlessWordpressAuroraCluster', {
       engine: rds.DatabaseClusterEngine.AURORA_MYSQL,
-      masterUser: {
-        username: DB_USER,
-        password: secret,
-      },
+      credentials: rds.Credentials.fromPassword(DB_USER,secret),
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       instanceProps: {
         vpc: serverlessVPC,
