@@ -1,4 +1,8 @@
-## cdk-serverless-wordpress
+this project is archived. please check another similar project
+
+https://github.com/aws-samples/serverless-woocommerce-workshop
+
+# cdk-serverless-wordpress
 
 ## what does this repo do
 
